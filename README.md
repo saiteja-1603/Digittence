@@ -67,7 +67,7 @@ Digittence/
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 ### 1. Clone the repository
 
@@ -155,20 +155,6 @@ http://127.0.0.1:5000/
 
 ---
 
-## Screenshots
-
-Add screenshots here.
-
-Example:
-
-- Login Page
-- Dashboard
-- Class Management
-- Subject Management
-- Attendance Page
-
----
-
 ## Future Enhancements
 
 - Student login portal
@@ -208,4 +194,4 @@ B.Tech Computer Science and Engineering
 
 JNTUH College of Engineering Sultanpur
 
-GitHub: https://github.com/your-username
+GitHub: https://github.com/saiteja-1603
