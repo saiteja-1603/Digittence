@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Digittence | Smart Attendance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<nav class="navbar">
+    <h2>Digittence</h2>
+    <a href="login.html" class="nav-btn">Login</a>
+</nav>
+
+<section class="hero-section">
+    <div class="hero-content">
+        <h1>Redefining Attendance</h1>
+        <h2 class="typing"></h2>
+
+        <p>
+            A next-generation attendance management system integrated with
+            smart recognition, real-time records, and seamless reporting.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="register.html" class="btn-primary">Get Started</a>
+            <a href="#features" class="btn-secondary">Explore Features</a>
+        </div>
+    </div>
+
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
+    </div>
+</section>
+
+<section id="features" class="features">
+    <h2>Why Digittence?</h2>
+
+    <div class="feature-cards">
+        <div class="card">
+            <h3>Smart Attendance</h3>
+            <p>Secure and automated attendance tracking.</p>
+        </div>
+
+        <div class="card">
+            <h3>Real-Time Data</h3>
+            <p>Attendance synced instantly with backend.</p>
+        </div>
+
+        <div class="card">
+            <h3>Faculty Dashboard</h3>
+            <p>Manage students and reports easily.</p>
+        </div>
+
+        <div class="card">
+            <h3>Export Reports</h3>
+            <p>Download attendance reports anytime.</p>
+        </div>
+    </div>
+</section>
+
+<script src="js/script.js"></script>
+</body>
+</html>

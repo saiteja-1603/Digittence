@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Digittence</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body onload="checkAuth()">
+    <div class="overlay"></div>
+    <nav class="navbar">
+        <h2>Welcome, <span id="facultyName"></span></h2>
+        <button class="nav-btn" onclick="logout()">Logout</button>
+    </nav>
+
+<section class="features">
+    <h2>Dashboard</h2>
+    <div class="feature-cards"> 
+        <a href="/Classes">
+            <h3>Classes</h3>
+            <p>Create and manage your classes.</p></a>
+        </div>
+    </div>
+</section></a>
+
+</body>
+</html>

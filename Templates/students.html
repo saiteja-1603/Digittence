@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students | Digittence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<nav class="navbar">
+    <h2>Students</h2>
+</nav>
+
+<section class="features">
+    <h2>Manage Students</h2>
+
+    <!-- Add Student Form -->
+    <form action="{{ url_for('add_student') }}" method="POST">
+        <input type="text" name="studentName" placeholder="Student Name" required>
+        <input type="text" name="rollNo" placeholder="Roll Number" required>
+        <button type="submit" class="btn-primary">Add Student</button>
+    </form>
+
+    <!-- Students Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        {% for s in students %}
+        <tr>
+            <td>{{ s.roll_no }}</td>
+            <td>{{ s.name }}</td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+</section>
+<a href="subjects.html">
+<form action="/go_to_subjects" method="POST" style="text-align: center; margin-top: 20px;">
+    <button type="submit" style="
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+    ">
+        Submit
+    </button>
+</form>
+</a>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Class Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body onload="checkAuth()">
+
+<div class="overlay"></div>
+
+<nav class="navbar">
+    <h2>Class Dashboard</h2>
+    <button class="nav-btn" onclick="logout()">Logout</button>
+</nav>
+
+<section class="features">
+    <div class="feature-cards">
+
+        <a href="select_attendence.html"><div class="card" onclick="window.location.href='/attendance.html'">
+            <h3>Mark Attendance</h3>
+        </div></a>
+
+        <a href="subjects.html"><div class="card" onclick="window.location.href='/subjects.html'">
+            <h3>Subjects</h3>
+        </div></a>
+
+        <a href="reports.html"><div class="card" onclick="window.location.href='/reports.html'">
+            <h3>Reports</h3>
+        </div></a>
+
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

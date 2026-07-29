@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance | Digittence</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<section class="hero-section">
+    <div class="hero-content">
+
+        <!-- Roll display -->
+        <h1 id="roll">Loading...</h1>
+
+        <!-- Instructions -->
+        <p id="instruction">
+            👉 Swipe Right = Present | 👈 Swipe Left = Absent <br>
+            💻 Press <b>P</b> = Present | <b>A</b> = Absent
+        </p>
+
+        <!-- Absent summary (hidden initially) -->
+        <div id="summary" style="display:none;">
+            <h2>Absent Students</h2>
+            <p id="absent-list"></p>
+
+            <button class="btn-primary" onclick="finalSubmit()">
+                Confirm & Submit
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<script src="js/gesture.js"></script>
+</body>
+</html>

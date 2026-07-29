@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Digittence | Staff Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="login-wrapper">
+        <div class="login-box">
+            <h1>Digittence</h1>
+            <p class="tagline">Smart Attendance Platform</p>
+
+            <h2>Staff Registration</h2>
+            <p class="sub-text">Create your Digittence account</p>
+
+            <form action="/submit" method="POST">
+                <div class="input-group">
+                    <input type="text" name="name" id="name" required>
+                    <label>Full Name</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" name="email" id="email" required>
+                    <label>Email</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" name="password" id="password" required>
+                    <label>Password</label>
+                </div>
+
+                <a href="login.html"><button type="submit" value="submit">Register</button></a>
+                <p class="msg" id="register-msg"></p>
+                <a href="login.html" class="forgot">Already have an account? Login</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

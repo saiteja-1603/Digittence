@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analysis</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<section class="hero-section">
+  <div class="hero-content">
+    <h1>Attendance Analysis</h1>
+
+    <input type="date" id="from" class="nav-btn">
+    <input type="date" id="to" class="nav-btn"><br><br>
+
+    <select id="subject" class="nav-btn">
+      <option>Maths</option>
+      <option>Physics</option>
+    </select><br><br>
+
+    <button class="btn-primary" onclick="getAnalysis()">Analyze</button>
+    <button class="btn-secondary" onclick="downloadExcel()">Download Excel</button>
+
+    <h3 id="topper"></h3>
+  </div>
+</section>
+
+<script src="js/api.js"></script>
+</body>
+</html>

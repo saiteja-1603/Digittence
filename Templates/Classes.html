@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classes | Digittence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<nav class="navbar">
+    <h2>Classes</h2>
+</nav>
+
+<section class="features">
+    <h2>Manage Classes</h2>
+
+    <!-- Add Class Form -->
+    <form action="/add_class" method="POST" class="class-form">
+        <div class="form-group">
+            <label>Class Name</label>
+            <input type="text" name="className" placeholder="Enter class name (e.g., CSE-3A)" required>
+        </div>
+        <button type="submit" class="create-class-btn">+ Create Class</button>
+    </form>
+
+    <!-- Display Classes -->
+    <div class="feature-cards">
+
+        {% for c in classes %}
+
+        <div class="card">
+            <h3>{{ c.className }}</h3>
+
+            <div class="class-actions">
+                <a href="{{ url_for('open_class', table_name=c.table_name) }}" class="open-btn-class">Open</a>
+                <a href="/delete_class/{{ c.id }}" class="delete-btn-class">Delete</a>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</section>
+
+</body>
+</html>

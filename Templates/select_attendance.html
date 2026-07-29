@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Attendance</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<nav class="navbar">
+  <h2>Attendance Setup</h2>
+</nav>
+
+<section class="hero-section">
+  <div class="hero-content">
+    <h1>Attendance Details</h1>
+
+    <select id="subject" name="subject" class="nav-btn">
+      <option>Scripting Languages</option>
+      <option>FLAT</option>
+      <option>Machine Learning</option>
+      <option>Artificial intelligence</option>
+      <option>Open Elective</option>
+    </select><br><br>
+
+    <input type="date" id="date" class="nav-btn"><br><br>
+
+    <input type="number" id="classes" placeholder="No of Classes" class="nav-btn"><br><br>
+
+    <button class="btn-primary" onclick="startAttendance()">Proceed</button>
+  </div>
+</section>
+
+<script src="js/api.js"></script>
+</body>
+</html>
