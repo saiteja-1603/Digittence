@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f")
+                no-repeat center / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(3px);
+}
+
+/* Wrapper */
+.login-wrapper {
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 1.1s ease;
+}
+
+/* Glass Login Box */
+.login-box {
+    width: 380px;
+    padding: 40px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(14px);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+    text-align: center;
+}
+
+/* Headings */
+.login-box h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.tagline {
+    font-size: 13px;
+    opacity: 0.85;
+    margin-bottom: 20px;
+}
+
+.login-box h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.sub-text {
+    font-size: 13px;
+    opacity: 0.75;
+    margin-bottom: 30px;
+}
+
+/* Inputs */
+.input-group {
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -12px;
+    font-size: 12px;
+    opacity: 1;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #6a5acd, #00e5ff);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Forgot links */
+.forgot {
+    display: block;
+    margin-top: 18px;
+    font-size: 13px;
+    color: #fff;
+    opacity: 0.85;
+    text-decoration: none;
+}
+
+.forgot:hover {
+    opacity: 1;
+}
+
+/* Messages */
+.msg {
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.msg.error { color: #ffb3b3; }
+.msg.success { color: #b3ffda; }
+
+/* Animation */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .login-box { width: 90%; }
+}

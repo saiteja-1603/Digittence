@@ -1,0 +1,609 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c")
+        no-repeat center / cover;
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: -1;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px;
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    z-index: 10;
+}
+
+.nav-btn {
+    padding: 8px 22px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.25);
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.nav-btn:hover {
+    transform: translateY(-3px);
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    padding: 60px;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+    animation: fadeUp 1.2s ease;
+}
+
+.hero-content h1 {
+    font-size: 54px;
+}
+
+.hero-content h2 {
+    margin: 15px 0;
+    color: #00e5ff;
+    min-height: 32px;
+}
+
+.hero-content p {
+    max-width: 520px;
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+.hero-buttons a {
+    margin-right: 15px;
+}
+
+.btn-primary {
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #6a5acd, #00e5ff);
+    border-radius: 25px;
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    padding: 12px 28px;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+}
+
+.hero-image img {
+    width: 420px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    animation: float 4s ease-in-out infinite;
+}
+
+.features {
+    padding: 80px 60px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 18px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.glass-form {
+    max-width: 400px;
+    margin: 60px auto;
+    background: rgba(255,255,255,0.18);
+    padding: 35px;
+    border-radius: 22px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    color: rgba(255,255,255,0.7);
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -8px;
+    left: 10px;
+    font-size: 12px;
+    color: #00e5ff;
+    background: rgba(0,0,0,0.4);
+    padding: 2px 8px;
+    border-radius: 8px;
+}
+
+.input-group input:focus {
+    border-color: #00e5ff;
+    box-shadow: 0 0 14px rgba(0,229,255,0.4);
+}
+
+.password-group {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.toggle-password:hover {
+    opacity: 1;
+}
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.4) 10%, transparent 10%);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.6s, opacity 1s;
+}
+
+.ripple:active::after {
+    transform: scale(3);
+    opacity: 1;
+    transition: 0s;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+}
+
+th {
+    background: rgba(255,255,255,0.2);
+}
+
+tr:nth-child(even) {
+    background: rgba(255,255,255,0.05);
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 300px;
+    }
+}
+
+@media (max-width: 500px) {
+    .feature-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.control-card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.control-card input,
+.control-card select {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    min-width: 150px;
+}
+
+.btn {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-primary {
+    background: #4CAF50;
+    color: white;
+}
+
+.btn-secondary {
+    background: #2196F3;
+    color: white;
+}
+
+.btn-danger {
+    background: #e53935;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.attendance-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.present {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.absent {
+    background-color: #e53935;
+    color: white;
+}
+
+.inactive {
+    background-color: #ccc;
+    color: #444;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+.action-btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    margin: 0 4px;
+    transition: 0.2s ease;
+}
+
+.edit-btn {
+    background: #ffc107;
+    color: #000;
+}
+
+.delete-btn {
+    background: #e53935;
+    color: white;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+}
+
+.add-student-main {
+    padding: 10px 20px;
+    background: #2196F3;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.add-student-main:hover {
+    background: #1976D2;
+}
+
+.class-form {
+    max-width: 500px;
+    margin: 0 auto 50px auto;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #00e5ff;
+}
+
+.form-group input {
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #00e5ff;
+    box-shadow: 0 0 12px rgba(0,229,255,0.4);
+    outline: none;
+}
+
+.create-class-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #00e5ff, #6a5acd);
+    color: #000;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.create-class-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,229,255,0.4);
+}
+
+.card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 18px;
+    padding: 25px;
+    transition: 0.3s ease;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.class-card-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.class-card-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.open-btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.open-btn:hover {
+    background: #388E3C;
+}
+
+.edit-btn-class {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #ffc107;
+    color: black;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.edit-btn-class:hover {
+    background: #e0a800;
+}
+
+.delete-btn-class {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #e53935;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.delete-btn-class:hover {
+    background: #c62828;
+}
+
+.class-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.class-card-top h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.class-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.icon-btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.open-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.open-btn:hover {
+    background: #388E3C;
+}
+
+.edit-btn-class {
+    background: #ffc107;
+    color: #000;
+}
+
+.edit-btn-class:hover {
+    background: #e0a800;
+}
+
+.delete-btn-class {
+    background: #e53935;
+    color: white;
+}
+
+.delete-btn-class:hover {
+    background: #c62828;
+}
